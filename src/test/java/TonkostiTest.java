@@ -5,8 +5,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 
-    @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
-    public class TonkostiTest {
+@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
+    public class ChromeTest {
         public static WebDriver driver;
         private final String baseUrl = "https://tonkosti.ru/";
 
@@ -43,7 +43,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
         @Order(5)
         public void regisr() {
             WebElement input = driver.findElement(By.id("ttAuth_email"));
-            input.sendKeys("zhenkekd@gmail.com");
+            input.sendKeys("zhenkek@gmail.com");
             input = driver.findElement(By.id("ttAuth_password"));
             input.sendKeys("qwerty20026565");
             input = driver.findElement(By.id("ttAuth_password_new"));
@@ -55,14 +55,45 @@ import org.openqa.selenium.chrome.ChromeDriver;
         @Order(6)
         public void putReg() {
             driver.findElement(By.xpath("//input[@id='ttAuth_btn']")).click();
-            driver.quit();
+
         }
 
-//     // @Test
-//      @Order(7)
-//      public void signOut() throws InterruptedException {
-//                      driver.findElement(By.xpath("//a[@class='myaccount-logout']")).click();
-//         //  driver.quit();
-//       }
+        @Test
+        @Order(7)
+        public void putWeb() {
+            driver.get("https://tonkosti.ru/%D0%96%D1%83%D1%80%D0%BD%D0%B0%D0%BB");
+            driver.get("https://tonkosti.ru/%D0%92%D0%BE%D0%BF%D1%80%D0%BE%D1%81_%E2%80%94_%D0%BE%D1%82%D0%B2%D0%B5%D1%82");
+        }
+
+        @Test
+        @Order(8)
+        public void putWebSecond() {
+            driver.get("https://tonkosti.ru/%D0%9D%D0%BE%D0%B2%D0%BE%D1%81%D1%82%D0%B8_%D1%82%D1%83%D1%80%D0%B8%D0%B7%D0%BC%D0%B0");
+            driver.get("https://tonkosti.ru/%D0%9F%D0%BE%D0%B3%D0%BE%D0%B4%D0%B0");
+        }
+
+        @Test
+        @Order(9)
+        public void putWebThird() {
+            driver.get("https://tonkosti.ru/%D0%9A%D0%B0%D1%80%D1%82%D1%8B");
+            driver.get("https://tonkosti.ru/%D0%A1%D0%BF%D0%B5%D1%86%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82%D1%8B");
+        }
+
+        @Test
+        @Order(10)
+        public void PutMoskw() {
+            driver.get("https://tonkosti.ru/%D0%93%D0%B8%D0%B4%D1%8B");
+            driver.findElement(By.xpath("//span[@class='c-guide-card__title-text']")).click();
+
+        }
+
+        @Test
+        @Order(11)
+        public void PutBela() {
+            driver.get("https://tonkosti.ru/%D0%93%D0%B8%D0%B4%D1%8B");
+            driver.findElement(By.xpath("//span[@class='c-bar-list__txt']")).click();
+            driver.quit();
+            System.out.println("---------------------THE END TEST---------------------");
+        }
     }
 
